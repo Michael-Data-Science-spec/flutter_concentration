@@ -17,26 +17,22 @@ class AutoCardIndex {
 }
 
 class ConcentrationCard {
-  bool isFlipped = false;
-  bool isMatched = false;
-  final int index = AutoCardIndex().assignCardIndex();
-  bool hasEqual = false;
+  bool _isFlipped = false;
+  bool _isMatched = false;
+
+  final int index;
   final AssetImage content;
 
-  ConcentrationCard(this.content);
+  ConcentrationCard(this.content, this.index);
 
   void flipCard() {
-    if (!isMatched) {
-      isFlipped = !isFlipped;
+    if (!_isMatched) {
+      _isFlipped = !_isFlipped;
     }
   }
 
   void matchCard() {
-    isMatched = true;
-  }
-
-  void setEqual() {
-    hasEqual = true;
+    _isMatched = true;
   }
 
   @override
